@@ -7,6 +7,7 @@ import (
 
 func main() {
 
+	// 基本
 	i := 2
 	fmt.Println("Write ", i, "as ")
 	switch i {
@@ -18,6 +19,7 @@ func main() {
 		fmt.Println("three")
 	}
 
+	// コンマを使うと1つのcaseに複数の条件を書ける
 	switch time.Now().Weekday() {
 	case time.Saturday, time.Sunday:
 		fmt.Println("It's the weekend")
@@ -25,6 +27,7 @@ func main() {
 		fmt.Println("It's a weekday")
 	}
 
+	// switch直後に式を書かなければif/elseと同義
 	t := time.Now()
 	switch {
 	case t.Hour() < 12:
@@ -33,6 +36,7 @@ func main() {
 		fmt.Println("It's after noon")
 	}
 
+	// 型について分岐することができる。
 	whatAmI := func(i interface{}) {
 		switch t := i.(type) {
 		case bool:
